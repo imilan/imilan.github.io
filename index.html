@@ -1,144 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>App</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <!-- <link rel="stylesheet" href="C:\Users\I\Documents\GitHub\imilan.github.io\themes\ivanTheme.css" />
-  <link rel="stylesheet" href="C:\Users\I\Documents\GitHub\imilan.github.io\themes\jquery.mobile.icons.min.css" /> -->
+  
+ 
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
   
+  <!--  custom css  -->
 
 </head>
 <body>
 
-<div data-role="page" id="pageone" data-theme = "a">
-<div id="wrapper">
-  <div data-role="header" id = "header">
-    <h1>Welcome To Ivan's Cool Homepage</h1>
-  </div>
+<div data-role="page" data-dialog = "true" id="loginPage" data-theme="a">
 
-  <div data-role="main" class="ui-content">
-    <p>Welcome! Page for Stats from the most popular leagues!</p>
-    <div data-role="main" class="ui-content">
-    <div data-role="controlgroup" data-type="horizontal">
+	<div data-role="header" id ="header" data-theme="b" data-position="fixed">
+	<h1>Sport App</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">	
+	 <div class="center-wrapper">
+	                 
+		<form method="post" action="index.php" data-ajax="false" >
+		<p><input id="loguser" name="loguser" type="text" data-clear-btn="true" placeholder="Username"></p>
+		<p><input id="logpassword" name="logpassword" type="password" data-clear-btn="true" placeholder="Password">
+		<input name="action" type="hidden" value="login" /></p>
+		<p><input type="submit" data-inline="true" value="Login" /></p>
+	  </form>
+		<a href="#signupPage" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Sign Up</a>
+	 </div>  
+	</div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+    <h1>Welcome</h1>
+</div>
+</div>
+
+<div data-role="page" id="signupPage">
+  <div data-role="header">
+    <h1>Sign Up</h1>
+  </div>
   
-      <a href="#pagetwo" class="ui-btn">Pg 2</a>
-      <a href="#pagethree" class="ui-btn">Pg 3</a>
-      <a href="#pagefour" class="ui-btn">Pg 4</a>
-    </div><br>
-</div>
-  </div>
-
-  <div data-role="footer" id = "footer">
-    <h1>Footer</h1>
-  </div>
-</div> 
-</div>
-
-<div data-role="page" data-dialog="true"id="pagetwo">
-<script>
-$(document).on("pagecreate","#pagetwo",function(){
-  $("p").on("tap",function(){
-    $(this).hide();
-  });                       
-});
-</script>
-  <div data-role="header">
-    <h1>Text Disappear Box</h1>
-  </div>
-
-  <div data-role="main" class="ui-content">
-	<p>Click these garbage teams to make them disappear:</p>
-	<p>Steelers</p>
-	<p>Lakers</p>
-	<p>Knicks</p>
+    <div data-role="main" class="ui-content">
 	
+	<form method="post" action="index.php" data-ajax="false" >
+    <p><input type="text" name="user" id="user" data-clear-btn="true" placeholder = "Username"><p> 
+    <p><input id="email" name="email" type="text" data-clear-btn="true" placeholder="Email"></p>
+    <p><input id="password" name="password" type="password" data-clear-btn="true" placeholder="Password">
+    <input name="action" type="hidden" value="signup" /></p>
+    <p><input type="submit" data-inline="true" value="Signup" /></p>
+  </form>
 
-    <div data-role="main" class="ui-content">
-    <div data-role="controlgroup" data-type="horizontal">
+	</div>
 
-      <a href="#pageone" class="ui-btn">Pg 1</a>
-      <a href="#pagethree" class="ui-btn">Pg 3</a>
-      <a href="#pagefour" class="ui-btn">Pg 4</a>
-    </div><br>
-</div>
-  </div>
 
-  <div data-role="footer">
-    <h1>Footer</h1>
-  </div>
-</div> 
-
-<div data-role="page" id="pagethree">
-<div data-role="panel" id="myPanel"> 
-    <h2>D Wade</h2>
-    <p>The Realest</p>
-	<img src="http://sneakerhistory.com/wp-content/uploads/2015/01/Dwyane-Wade-assist-for-LeBron-Dunk.jpg" alt="Mountain View" border = "3" style="width:304px;height:228px;">
-  </div> 
-  <div data-role="header">
-    <h1>Basketball Page</h1>
-	<div data-role="main" class="ui-content">
- 
-  </div>
-  </div>
-
-  <div data-role="main" class="ui-content">
+  <div data-role="footer" data-position="fixed" class="ui-bar">
+  <a href="#loginPage" data-role="button">Log In</a>
     
-	<img src="http://blog.fidmdigitalarts.com/wp-content/uploads/2011/04/nba-logo.jpg" alt="Mountain View" style="width:304px;height:228px;">
-	   <div data-role="main" class="ui-content">
-	   
-    <p>Click on the button below to open the Panel.</p>
-    <a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a>
-  </div>
-    <div data-role="main" class="ui-content">
-    <div data-role="controlgroup" data-type="horizontal">
-      <a href="#pageone" class="ui-btn">Pg 1</a>
-      <a href="#pagetwo" class="ui-btn">Pg 2</a>
-      <a href="#pagefour" class="ui-btn">Pg 4</a>
-    </div><br>
-</div>
-  </div>
-
-  <div data-role="footer">
-    <h1>Footer</h1>
   </div>
 </div> 
 
-<div data-role="page" id="pagefour">
-<div id="wrapper">
 
-  <div data-role="header">
-    <h1>Football</h1>
-  </div>
-
-  <div data-role="main" class="ui-content">
-     <div data-role="main" class="ui-content">
-    <form method="post" action="demoform.asp">
-	<img src="http://americanfootballfilms.com/wp-content/uploads/2012/11/nfl-logo.jpg" alt="Mountain View" style="width:304px;height:228px;">
-      <p>Type Your Name to Enter Sweepstakes!:</p>
-      <label for="fname">Name</label>
-      <input type="text" name="fname" id="fname" data-clear-btn="true">
-	  <input type="submit" data-inline="true" value="Submit">
-    </form>
-  </div>
-    <div data-role="main" class="ui-content">
-    <div data-role="controlgroup" data-type="horizontal">
-
-      <a href="#pageone" class="ui-btn">Pg 1</a>
-      <a href="#pagetwo" class="ui-btn">Pg 2</a>
-      <a href="#pagethree" class="ui-btn">Pg 3</a>
-    </div><br>
-</div>
-  </div>
-
-  <div data-role="footer" id = "footer">
-    <h1>Footer </h1>
-  </div>
-  </div>
-</div> 
 
 </body>
-</html>
+</html> 
+
